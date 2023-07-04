@@ -22,7 +22,7 @@ log(myName)
 // Exercise 4. Declare a variable called dreamDestination and give it the value
 // of what your dream vacation destination is.
 const dreamDestination = 'Barcelona'
-log(dreamDestination)
+log(dreamDestination) ***
 
 // Exercise 5. Make the following variables and assignments
 // - a variable called num1 with a value greater than 1 and less than 10
