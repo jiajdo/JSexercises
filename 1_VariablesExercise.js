@@ -124,7 +124,7 @@ const myAnswerForExercise22 = true;
 // Congrats, you made it to the end!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
-//
+// I found this easy. I used Stack Overflow and MDN for references.
 
 // Email your file to the course staff,
 // or commit your file to GitHub and email us a link.
