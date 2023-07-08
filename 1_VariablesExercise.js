@@ -12,9 +12,9 @@
 // Data Types and Variables
 let log = console.log
 // Exercise 1. Simply declare a variable named 'emptyVariable'
-const emptyVariable = ''
+let emptyVariable
 // Exercise 2. Declare a variable called 'myName'
-var myName = ''
+let myName 
 
 // Exercise 3. Assign your name as the value for 'myName'
 myName = 'Jia'
