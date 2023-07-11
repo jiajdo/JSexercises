@@ -42,6 +42,8 @@
 // Feel free to update your answers if you got them wrong at first -- this exercise is for your own learning.
 // But make sure you understand why the correct answer is right.
 
+let log = console.log
+
 // EXERCISE 1.
 // First reassign the value of `answer1` so that it has the value of:
 // "num1 is small"
@@ -51,16 +53,22 @@
 // "The value of num1 is <num1 value> and is greater than 10".
 
 function exercise1(num1) {
-  let answer1 = "";
+  let answer1 = "num1 is small";
   // ------------------------------------------
   // Write your code for exercise 1 below here:
   // ------------------------------------------
-
+if (num1 > 10){
+  return answer1 = `The value of num1 is ${num1} and is greater than 10`
+}
+else
   // ------------------------------------------
   // And above here
   // ------------------------------------------
   return answer1;
+  
 }
+log(exercise1(3))
+log(exercise1(100))
 
 // EXERCISE 2.
 // Write an if/else conditional statement that if given a number will assign
@@ -77,12 +85,18 @@ function exercise2(num2) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if (num2 % 2 ==0){
+  return `${num2} is even to answer2`
+}
+else return `${num2} is odd to answer2`
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer2;
 }
+
+log(exercise2(5))
+log(exercise2(10))
 
 // EXERCISE 3.
 // Write an if/else if/else block such that if `num3` is positive, then
@@ -98,12 +112,21 @@ function exercise3(num3) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if (num3 > 0){
+  return `${num3} is positive`
+}
+else if (num3 < 0){
+  return `${num3} is negative`
+}
+else return `${num3} is zero`
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer3;
 }
+log(exercise3(0))
+log(exercise3(5))
+log(exercise3(-10))
 
 // EXERCISE 4.
 // Write an if/else statement such that if `varA` and `varB` are strings or
@@ -116,17 +139,31 @@ function exercise4(varA, varB) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if (varA === varB){
+  answer4 = 'varA and varB are equal'
+}
+else answer4 = 'varA and varB differ'
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer4;
 }
 
+console.log(exercise4(10, 5))
+console.log(exercise4('jia', 'alex'))
+console.log(exercise4('jia', 5))
+console.log(exercise4(5, 5))
+console.log(exercise4('jia', 'jia'))
+console.log(exercise4(5, '5'))
+console.log(exercise4(true, 1))
+
+
 // EXERCISE 5.
 // In exercise 4, what are some of the unexpected cases where `varA` and `varB`
 // seemed like they are equal, but would not pass the tests? In your analysis
 // consider other data types beside strings and variables.
+// I expected true and 1 to be equal, but it's only equal when I set the if statement
+//strictly equal (===).
 
 // EXERCISE 6.
 // Here, assign the value of true to answer6 if:
@@ -137,12 +174,22 @@ function exercise6(varA, varB, varC) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if (varA === varB && varA != varC && varB != varC){
+  answer6 = true
+}
+else answer6 = false
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer6;
 }
+
+console.log(exercise6(4, 4, 5))
+console.log(exercise6(4, 5, 5))
+console.log(exercise6(true, true, 0))
+console.log(exercise6(4, 4, 4))
+console.log(exercise6('alex', 'alex', 'may'))
+
 
 // EXERCISE 7.
 // Use a switch conditional statement with case clauses such that if `num7` is
@@ -162,14 +209,36 @@ function exercise7(num7) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+switch(num7){
+  case 1: 
+  answer7 = "You won!"
+  break
+  case 7:
+  answer7 = "You are lucky!"
+  break
+  case 101:
+  answer7 = "Welcome to coding 101!"
+  break
+  case 1000000:
+  answer7 = "You are one in a million!"
+  break
+  default:
+  answer7 = "Thanks for that!"
+  break
+}
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer7;
 }
 
-// EXERCISE 8.
+console.log(exercise7(1))
+console.log(exercise7(7))
+console.log(exercise7(101))
+console.log(exercise7(1000000))
+console.log(exercise7(8))
+
+// EXERCISE 8. 
 // Using any conditional assign the value of true to answer8 if:
 // the values of amount1 and amount2 are between the values of
 // minimum and maximum
@@ -179,31 +248,55 @@ function exercise8(amount1, amount2, minimum, maximum) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
+if (amount1 > minimum && amount1< maximum && amount2 > minimum && amount2 <maximum)
+  answer8 = true
+  else answer8 = false
+return answer8;
+}
 
   // --------------------------------------------
   // And above here
   // --------------------------------------------
-  return answer8;
-}
+console.log(exercise8(12, 10, 0, 11))
+console.log(exercise8(1, 10, 0, 10))
+console.log(exercise8(-1, 100, 0, 11))
+console.log(exercise8(99, 2, 100, 1))
+console.log(exercise8(2,9,0,10))
 
-// EXERCISE 9.
+
+// EXERCISE 9. 
 // In this exercise, if `item` is a number, follow the rules given in Exercise 7
 // except that `answer7` is replaced by `answer9`
 // If `item` is not a number, then assign a value to answer9 of:
 // "Please send a number, that was a <data type>."
 // for example, if item===true, the value should be:
 // "Please send a number, that was a boolean."
+
+
 function exercise9(item) {
+  
   let answer9;
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+ switch(typeof item){
+  case "number": answer9 = exercise7(item)
+  break
+  default: answer9 = `Please send a number. That was a ${typeof item}.`
+ }   
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer9;
 }
+
+console.log(exercise9(true))
+console.log(exercise9("true"))
+console.log(exercise9(undefined))
+console.log(exercise9(NaN))
+console.log(exercise9(9))
+
+
 
 // EXERCISE 10.
 // This question is a modified version of a classic programming question
@@ -216,20 +309,33 @@ function exercise9(item) {
 // `num10` to `answer10`
 
 function exercise10(num10) {
-  let answer10;
+  let answer10 = '';
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
 
+  if (num10 % 3 === 0)
+  answer10 += "Fizz"
+  if (num10%5 === 0)
+  answer10 += "Buzz"
+  else if (num10 % 3 !== 0 && num10%5 !== 0)
+   answer10 = num10
+
+return answer10
+}
   // --------------------------------------------
   // And above here
   // --------------------------------------------
-  return answer10;
-}
+ 
 
+
+console.log(exercise10(3))
+console.log(exercise10(5))
+console.log(exercise10(15))
+console.log(exercise10(46))
 // Congrats, you made it to the end! You rock!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
-//
+//I found exercise 8 and 9 hard. I worked with a classmate to figure it out and used MDN and FreeCodeCamp as resources. 
 
 // Email your file to us or commit your file to GitHub and email us a link.
